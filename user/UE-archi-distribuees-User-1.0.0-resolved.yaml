@@ -12,13 +12,13 @@ info:
 tags:
 - name: admins
   description: Secured Admin-only calls
-- name: developerss
-  description: Operations available to regular developerss
+- name: developers
+  description: Operations available to regular developers
 paths:
   /:
     get:
       tags:
-      - developerss
+      - developers
       summary: home page of the service
       operationId: home
       responses:
@@ -32,7 +32,7 @@ paths:
   /users:
     get:
       tags:
-      - developerss
+      - developers
       summary: get the full JSON database
       operationId: get_user
       responses:
@@ -93,7 +93,7 @@ paths:
           description: ID not found
     get:
       tags:
-      - developerss
+      - developers
       summary: get the user by its id
       description: By passing in the appropriate options, you can get info of a User
       operationId: get_user_byid
@@ -116,7 +116,7 @@ paths:
   /bookings/{userid}:
     get:
       tags:
-      - developerss
+      - developers
       summary: lists the bookings of a user
       operationId: bookings_user
       parameters:
@@ -139,7 +139,7 @@ paths:
           description: user not found
     post:
       tags:
-      - developerss
+      - developers
       summary: adds a new movie to the bookings of a user
       operationId: add_bookings_user
       parameters:
@@ -169,7 +169,7 @@ paths:
   /movieinfos/{userid}:
     get:
       tags:
-      -  developerss
+      -  developers
       summary: Lists the infos of movies seen or booked by the user
       operationId: movieinfos_user
       parameters:
