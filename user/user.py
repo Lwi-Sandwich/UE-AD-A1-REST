@@ -33,7 +33,7 @@ def add_user(userid):
     return res
 
 @app.route('/users/<userid>', methods=['DELETE'])
-def delete_movie(userid):
+def delete_user(userid):
     for u in users:
         if str(u['id']) == str(userid):
             users.remove(u)
