@@ -72,6 +72,13 @@ def movieinfos_user(userid):
 	res = {"movies": [m for m in movies if m['id'] in ids_in_bookings]}
 	return make_response(jsonify(res), 200)
 
+@app.route("/bookings/<userid>", methods=['POST'])
+def add_booking(userid):
+	req = request.get_json()
+	r = requests.post(BOOKING_HOST + str(userid), json=req)
+	if r.status_code != 200:
+		return make_response(jsonify({"error": "booking not available"}), r.status_code)
+	return make_response(jsonify(r.json()), 200)
 
 
 if __name__ == "__main__":

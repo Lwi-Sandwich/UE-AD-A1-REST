@@ -156,7 +156,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/DateItem'
+              $ref: '#/components/schemas/NewMovie'
       responses:
         "200":
           description: new booking
