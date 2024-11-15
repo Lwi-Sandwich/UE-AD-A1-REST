@@ -17,7 +17,6 @@ with open('{}/databases/users.json'.format("."), "r") as jsf:
 def write(users):
     with open('{}/databases/users.json'.format("."), 'w') as f:
         json.dump({'users':users}, f, indent=4)
-@app.route('/users/<userid>', methods=['GET'])
 
 # Swagger documentation
 @app.route("/docs", methods=['GET'])
