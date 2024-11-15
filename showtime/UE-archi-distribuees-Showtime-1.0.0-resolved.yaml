@@ -64,19 +64,14 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Schedule'
-        "400":
-          description: bad input parameter
+        "404":
+          description: not found
 components:
   schemas:
     AllSchedule:
-      required:
-      - schedule
-      type: object
-      properties:
-        schedule:
-          type: array
-          items:
-            $ref: '#/components/schemas/Schedule'
+      type: array
+      items:
+        $ref: '#/components/schemas/Schedule'
     Schedule:
       required:
       - date
