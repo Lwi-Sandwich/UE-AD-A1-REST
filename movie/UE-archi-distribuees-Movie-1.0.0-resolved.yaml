@@ -3,10 +3,6 @@ openapi: 3.0.3
 info:
   title: Movie API
   description: This is the API of the Movie service, it should be much much much much much much much much much much much much much much much much much much much much much longer
-  contact:
-    name: Helene Coullon
-    url: https://helene-coullon.fr/
-    email: helene.coullon@imt-atlantique.fr
   license:
     name: GPL v3
     url: https://www.gnu.org/licenses/gpl-3.0.en.html
@@ -101,6 +97,8 @@ paths:
                 $ref: '#/components/schemas/MovieItem'
         "409":
           description: an existing item already exists
+        "400":
+          description: Invalid parameters
     delete:
       tags:
       - admins
@@ -118,8 +116,12 @@ paths:
           type: string
       responses:
         "200":
-          description: item deleted
-        "400":
+          description: item deleted and returned
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MovieItem'
+        "404":
           description: ID not found
   /moviesbytitle:
     get:
@@ -176,8 +178,14 @@ paths:
       responses:
         "200":
           description: rate updated
-        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MovieItem'
+        "404":
           description: movie ID not found
+        "400":
+          description: bad parameter
 components:
   schemas:
     AllMovies:
