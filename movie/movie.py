@@ -28,7 +28,7 @@ def get_spec():
 # Routes
 @app.route("/", methods=['GET'])
 def home():
-    return make_response("<h1 style='color:blue'>Welcome to the Movie service! :groalex:</h1>",200)
+    return make_response("<h1 style='color:blue'>Welcome to the Movie service!</h1>",200)
 
 @app.route("/json", methods=['GET'])
 def get_json():
