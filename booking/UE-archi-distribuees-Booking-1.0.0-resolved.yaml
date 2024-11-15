@@ -10,8 +10,6 @@ info:
     url: https://www.gnu.org/licenses/gpl-3.0.en.html
   version: 1.0.0
 tags:
-- name: admins
-  description: Secured Admin-only calls
 - name: developers
   description: Operations available to regular developers
 paths:
@@ -69,11 +67,11 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/BookingsUser'
-        "400":
-          description: bad input parameter
+        "404":
+          description: not found
     post:
       tags:
-      - admins
+        - developers
       summary: add a booking for a user
       description: Adds a booking for the user, the service showtimes have to be requested to check the validity of the booking that is asked
       operationId: add_booking_byuser
@@ -100,7 +98,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/BookingsUser'
         "409":
-          description: an existing item already exists
+          description: movie not planned for this date or booking already exists
 components:
   schemas:
     AllBookings:

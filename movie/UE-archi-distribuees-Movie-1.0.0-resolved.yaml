@@ -189,15 +189,10 @@ paths:
 components:
   schemas:
     AllMovies:
-      type: object
-      required:
-        - movies
-      properties:
-        movies:
-          type: array
-          items:
-            type: object
-            $ref: '#/components/schemas/MovieItem'
+      type: array
+      items:
+        type: object
+        $ref: '#/components/schemas/MovieItem'
     MovieItem:
       type: object
       required:
