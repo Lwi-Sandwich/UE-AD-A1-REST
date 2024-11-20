@@ -53,7 +53,7 @@ def add_movie(movieid):
             return make_response(jsonify({'error': 'Movie ID already exists'}), 409)
     movies.append(req)
     write(movies)
-    res = make_response(jsonify({"message":"movie added"}),200)
+    res = make_response(jsonify(m),200)
     return res
 
 @app.route('/movies/<movieid>/<rating>', methods=['PUT'])
