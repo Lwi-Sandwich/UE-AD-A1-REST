@@ -43,7 +43,7 @@ def get_movie_by_id(movieid):
             return res
     return make_response(jsonify({'error': 'Movie ID not found'}), 400)
 
-@app.route('/addmovie/<movieid>', methods=['POST'])
+@app.route('/movies/<movieid>', methods=['POST'])
 def add_movie(movieid):
     if any([k not in request.get_json() for k in ['id', 'title', 'rating', 'director']]):
         return make_response(jsonify({'error': 'bad input parameter'}), 400)
