@@ -24,3 +24,9 @@ chmod +x launch.sh
 
 Chaque micro-service peut également être lancé individuellement en utilisant la commande `python3 <nom_du_micro_service>.py` depuis son répertoire.
 
+## Ports
+- User: 3203
+- Movie: 3200
+- Booking: 3201
+- Showtime: 3202
+
